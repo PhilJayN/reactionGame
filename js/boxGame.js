@@ -22,14 +22,24 @@
 
 var App = (function () {
 
-  
-  var $startBtn = $('.start-btn');
-  $startBtn.on('click', function () {
-    console.log('clicked');
-  });
-
   var publicMethod = function (somethingOfInterest) {
   };
+
+  var createDivSize = function () {
+    var divSize = Math.random() * 100;
+  };
+
+  var createPos = function () {
+    // var posx = ()
+  };
+
+
+  var handlers = (function () {
+    var $startBtn = $('.start-btn');
+    $startBtn.on('click', function () {
+      console.log('clicked');
+    });
+  })();
 
   return {
     publicMethod: publicMethod
