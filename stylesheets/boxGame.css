@@ -14,6 +14,9 @@ html {
    box-sizing: border-box;
 }
 
+body {
+background-color: gray;
+}
 
 .bullseye {
   width: 100px;
@@ -21,9 +24,6 @@ html {
   background-color: pink;
 }
 
-footer {
-  color: red;
-}
 
 
 /*rule kicks in when @ 641 and above*/

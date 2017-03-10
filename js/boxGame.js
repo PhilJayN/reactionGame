@@ -22,26 +22,31 @@
 
 var App = {
 
-
-
   init: function () {
     this.createDivSize();
     console.log('asdfjk');
   },
 
-
-
   createDivSize: function () {
     var divSize = Math.random() * 100;
-    // return divSize;
   },
 
-  generatePosition: function () {
+  docWidth: $(document).width(),
+  // docHeight: $(document).height(),
+  // posx: (Math.random() * 234),
+  // posy: (Math.random() * 234),
+
+  position: function () {
     var docWidth = $(document).width();
     var docHeight = $(document).height();
     var posx = (Math.random() * 234);
     var posy = (Math.random() * 234);
-    console.log(posx);
+    return {
+      // docWidth: docWidth,
+      // docHeight: docHeight
+      posx: posx,
+      posy: posy
+    };
   },
 
   placement: function () {
@@ -49,10 +54,18 @@ var App = {
     $bullseye.css({
       'background-color': 'blue',
       'position': 'absolute',
-      'left': '344px',
-      'top': '344'
+      // 'left': '344px',
+      'left': this.position().posx.toString() +'px',
+      'top': this.position().posy.toString() + 'px',
     });
   },
+
+  test: function () {
+    console.log('test', this.position().posx.toString() + 'px');
+
+  },
+
+
 
   handlers: (function () {
     var $startBtn = $('.start-btn');
