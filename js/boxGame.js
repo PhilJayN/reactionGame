@@ -58,17 +58,13 @@ var App = {
   handlers: (function () {
     var $startBtn = $('.start-btn');
     var $bullseye = $('.bullseye');
-    // var startTime;
-    // var startTime = Date.now();
     var startTime;
 
     $startBtn.on('click', function () {
-      // console.log('clicked', startTime);
       startTime = Date.now();
       App.render();
     });
     $bullseye.on('click', function () {
-      // console.log('clicked bullseye');
       var reaction = Date.now() - startTime;
       startTime = 0;
       console.log('rxn time', reaction / 1000);
@@ -82,9 +78,3 @@ var App = {
 };
 
 App.init();
-
-// setInterval(function() {
-// }, App.render(), 500);
-
-
-// setInterval(function(){ console.log('hi'); }, 1000);
