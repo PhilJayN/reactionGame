@@ -1,28 +1,4 @@
-// var Module = (function () {
-//
-//   var privateArray = [];
-//
-//   var publicMethod = function (somethingOfInterest) {
-//     privateArray.push(somethingOfInterest);
-// 		console.log('private arr is now', privateArray);
-//   };
-//
-//   return {
-//     publicMethod: publicMethod
-//   };
-//
-// })();
-//
-// Module.publicMethod('text');
-
-
-// var $card = $('.card');
-// $card.off().on('click', function() {
-
-
 var App = {
-
-
 
   init: function () {
     this.createDivSize();
@@ -50,7 +26,7 @@ var App = {
     var docWidth = $(document).width();
     var docHeight = $(document).height();
     var posx = (Math.random() * docWidth - 90);
-    var posy = (Math.random() * 232);
+    var posy = (Math.random() * docHeight - 90);
     return {
       // docWidth: docWidth,
       // docHeight: docHeight
@@ -59,8 +35,9 @@ var App = {
     };
   },
 
-  placement: function () {
+  render: function () {
     var $bullseye = $('.bullseye');
+    $bullseye.show();
     $bullseye.css({
       'background-color': 'blue',
       'position': 'absolute',
@@ -68,19 +45,38 @@ var App = {
       'left': this.position().posx.toString() +'px',
       'top': this.position().posy.toString() + 'px',
     });
+    return {
+      $bullseye: $bullseye
+    };
   },
 
   test: function () {
     console.log('test', this.position().posx.toString() + 'px');
-    setInterval(function(){ App.placement(); }, 500);
+    setInterval(function(){ App.render(); }, 500);
   },
-
 
   handlers: (function () {
     var $startBtn = $('.start-btn');
+    var $bullseye = $('.bullseye');
+    // var startTime;
+    // var startTime = Date.now();
+    var startTime;
+
     $startBtn.on('click', function () {
-      console.log('clicked');
+      // console.log('clicked', startTime);
+      startTime = Date.now();
+      App.render();
     });
+    $bullseye.on('click', function () {
+      // console.log('clicked bullseye');
+      var reaction = Date.now() - startTime;
+      startTime = 0;
+      console.log('rxn time', reaction / 1000);
+      console.log('reset ', startTime);
+      $bullseye.hide();
+      App.render();
+    });
+    //
   })()
 
 };
@@ -88,7 +84,7 @@ var App = {
 App.init();
 
 // setInterval(function() {
-// }, App.placement(), 500);
+// }, App.render(), 500);
 
 
 // setInterval(function(){ console.log('hi'); }, 1000);
