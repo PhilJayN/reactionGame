@@ -12,15 +12,10 @@ var App = {
   createDivSize: function () {
     var divSize = Math.random() * 100;
   },
-
   // docWidth: $(document).width(),
   // docHeight: $(document).height(),
   // posx: (Math.random() * 234),
   // posy: (Math.random() * 234),
-
-  bullseye: function () {
-
-  },
 
   position: function () {
     var docWidth = $(document).width();
@@ -34,9 +29,12 @@ var App = {
       posy: posy
     };
   },
+  ogtime: 0,
 
   render: function () {
     var $bullseye = $('.bullseye');
+    // var startTime = Date.now();
+    this.ogtime = Date.now();
     $bullseye.show();
     $bullseye.css({
       'background-color': 'blue',
@@ -45,9 +43,7 @@ var App = {
       'left': this.position().posx.toString() +'px',
       'top': this.position().posy.toString() + 'px',
     });
-    return {
-      $bullseye: $bullseye
-    };
+    // return startTime;
   },
 
   test: function () {
@@ -55,22 +51,38 @@ var App = {
     setInterval(function(){ App.render(); }, 500);
   },
 
+  start: function () {
+    var time = Date.now();
+    return time;
+  },
+
   handlers: (function () {
     var $startBtn = $('.start-btn');
     var $bullseye = $('.bullseye');
-    var startTime;
+    var $reactionTxt = $('.reaction-txt');
+
+    var endTime;
 
     $startBtn.on('click', function () {
-      startTime = Date.now();
       App.render();
+      // this.startTime();
     });
     $bullseye.on('click', function () {
-      var reaction = Date.now() - startTime;
-      startTime = 0;
-      console.log('rxn time', reaction / 1000);
-      console.log('reset ', startTime);
+      console.log('start time', App.start());
+      endTime = Date.now();
+      console.log('endTime', endTime);
+      // console.log('rxn time', reaction / 1000);
+      // console.log('reset ', startTime);
+      // var timeNow = Date.now();
+      // var reaction = (endTime - App.start() ) / 1000;
+      console.log('ogtime', App.ogtime);
+      var reaction = (endTime - App.ogtime) / 1000;
+
+      console.log('reaction', reaction);
+      $reactionTxt.text( reaction + 'seconds');
+      // $reactionTxt.text( (endTime - App.start()) / 1000 + 'seconds');
       $bullseye.hide();
-      App.render();
+      // App.render();
     });
     //
   })()
