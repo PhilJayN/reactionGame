@@ -15,11 +15,11 @@ html {
 }
 
 body {
-background-color: gray;
+background-color: #262830;
 }
 
 .content-wrapper {
-   border: 1px solid blue;
+   /*border: 1px solid blue;*/
    width: 280px;
    height: 500px;
 

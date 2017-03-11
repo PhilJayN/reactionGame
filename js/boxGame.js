@@ -1,6 +1,6 @@
 // var main = function() {
 
-$(function() {
+// $(function() {
 
 var App = {
 
@@ -39,6 +39,27 @@ var App = {
 
   ogtime: 0,
   personalRecord: null,
+  colors: ['#D75D61', '#E5D347', '#FD9810', '#56AF5A', '#E8413D',
+  '#05AFC4', '#4C4C4C' ],
+
+  pickColor: function () {
+    // for (var i = 0; i < this.colors.length; i++) {
+    //   this.colors[i]
+    // }
+    // return Math.floor( (Math.random() * 10 ) ) - 1;
+    return Math.floor(Math.random() * (7 - 0) + 0);
+  },
+
+  testNum: function () {
+    while (this.pickColor() !== 6) {
+      this.pickColor();
+    }
+
+    // if (this.pickColor === 6) {
+    //   console.log('foiund num!');
+    //   return;
+    // }
+  },
 
   render: function () {
     var wMax = $('.content-wrapper').innerWidth();
@@ -53,8 +74,11 @@ var App = {
 
     this.ogtime = Date.now();
     $bullseye.show();
+
+
     $bullseye.css({
-      'background-color': 'pink',
+      // 'background-color': 'red',
+      'background-color': this.colors[this.pickColor()],
       'position': 'absolute',
       // 'left': '50px',
       // 'top': '50' +'px',
@@ -106,7 +130,7 @@ var App = {
 
 App.init();
 
-console.log('ready!');
-});
+// console.log('ready!');
+// });
 
 // $(document).ready(main);
