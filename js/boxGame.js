@@ -48,6 +48,9 @@ var App = {
     console.log('posX', this.randomNum(1, wMax, hMax).posX);
     console.log('poxY', this.randomNum(1, wMax, hMax).posY);
 
+    var posX = (Math.random() * (wMax - 90)).toFixed();
+    var posY = (Math.random() * (hMax - 90)).toFixed();
+
     this.ogtime = Date.now();
     $bullseye.show();
     $bullseye.css({
@@ -55,9 +58,13 @@ var App = {
       'position': 'absolute',
       // 'left': '50px',
       // 'top': '50' +'px',
-      'left': this.randomNum(1, wMax, hMax).posX.toString() +'px',
-      'top': this.randomNum(1, hMax, wMax).posY.toString() +'px',
+      // 'left': this.randomNum(1, wMax, hMax).posX.toString() +'px',
+      // 'top': this.randomNum(1, hMax, wMax).posY.toString() +'px',
+      'left': posX +'px',
+      'top': posY + 'px',
     });
+    console.log('posX', posX);
+    console.log('posY', posY);
   },
 
   test: function () {
