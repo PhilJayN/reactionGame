@@ -1,3 +1,7 @@
+
+
+
+
 var App = {
 
   init: function () {
@@ -16,32 +20,49 @@ var App = {
   // docHeight: $(document).height(),
   // posx: (Math.random() * 234),
   // posy: (Math.random() * 234),
+  // var docWidth = $(document).width();
+  // var docHeight = $(document).height();
+  // var posx = (Math.random() * docWidth - 90);
+  // var posy = (Math.random() * docHeight - 90);
+  //
+  // function getRandomArbitrary(min, max) {
+  // },
 
-  position: function () {
-    var docWidth = $(document).width();
-    var docHeight = $(document).height();
-    var posx = (Math.random() * docWidth - 90);
-    var posy = (Math.random() * docHeight - 90);
-    return {
-      // docWidth: docWidth,
-      // docHeight: docHeight
-      posx: posx,
-      posy: posy
-    };
+  randomNum: function (min, wMax, hMax) {
+      var posX = Math.random() * (wMax - min) + min;
+      var posY = Math.random() * (hMax - min) + min;
+      return {
+        posX: posX,
+        posY: posY
+      };
   },
+
+  // position: function (min, max) {
+  //   var posx = (Math.random() * docWidth);
+  //   var posy = (Math.random() * docHeight - 90);
+  //   return {
+  //     posx: posx,
+  //     posy: posy
+  //   };
+  // },
   ogtime: 0,
   personalRecord: null,
 
   render: function () {
+    var wMax = $('.content-wrapper').innerWidth();
+    var hMax = $('.content-wrapper').innerHeight();
     var $bullseye = $('.bullseye');
+    console.log(this.randomNum(1, wMax, hMax).posX);
+    console.log(this.randomNum(1, wMax, hMax).posY);
+
     this.ogtime = Date.now();
     $bullseye.show();
     $bullseye.css({
       'background-color': 'blue',
       'position': 'absolute',
       // 'left': '-344px',
-      'left': this.position().posx.toString() +'px',
-      'top': this.position().posy.toString() + 'px',
+      'left': this.randomNum(1, wMax, hMax).posX.toString() +'px',
+      'top': this.randomNum(1, wMax, hMax).posY.toString() +'px',
     });
   },
 
@@ -76,7 +97,7 @@ var App = {
       //timeout should random num seconds range to render, to make it fun:
       setTimeout(function() {
         App.render();
-      }, 2000);
+      }, 500);
 
     });
   })()
