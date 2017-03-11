@@ -15,7 +15,9 @@ html {
 }
 
 body {
-background-color: #262830;
+  background-color: #222222;
+  color: silver;
+
 }
 
 .content-wrapper {
@@ -26,23 +28,43 @@ background-color: #262830;
 }
 
 .bullseye {
+  display: none;
   width: 90px;
   height: 90px;
-  background-color: pink;
-  display: none;
+border-radius: 3px;
 }
 
+.btn-style {
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: .65em;
+  margin-right: 1em;
+}
 
+.start-btn {
+  background-color: #2C6CF6;
+  background-color: #29B363;
+}
 
+.stop-btn {
+  background-color:#6AC5B2;
+  background-color: #EF4D54;
+}
+
+/*.start-btn3 {
+  background-color: #29B363;
+  border: none;
+  width: 4px;
+  height: 40px;
+}
+*/
 
 
 /*rule kicks in when @ 641 and above*/
 /*TABLET*/
 @media only screen and (min-width: 641px) {
 
-  p {
-    color: green;
-  }
 
 
 }
@@ -52,9 +74,6 @@ background-color: #262830;
 /*or try breakpoint at 1141px */
 /*DESKTOP*/
 @media only screen and (min-width: 961px) {
-  p {
-    color: silver;
-  }
 
 
 }

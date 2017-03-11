@@ -112,10 +112,10 @@ var App = {
       endTime = Date.now();
       var reaction = (endTime - App.ogtime) / 1000;
       // console.log('reaction', reaction);
-      $reactionTxt.text( 'Reaction time: ' + reaction + 'seconds');
+      $reactionTxt.text( 'Reaction Time: ' + reaction + 's');
       if (App.personalRecord === null || reaction < App.personalRecord) {
         App.personalRecord = reaction;
-        $recordTxt.text('Personal record: ' + App.personalRecord);
+        $recordTxt.text('Best Time: ' + App.personalRecord);
       }
 
       $bullseye.hide();
