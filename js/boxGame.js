@@ -5,6 +5,7 @@
 var App = {
 
   init: function () {
+    
     this.createDivSize();
     console.log('asdfjk');
     var $bullseye = $('.bullseye');
