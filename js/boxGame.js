@@ -5,7 +5,7 @@
 var App = {
 
   init: function () {
-    
+
     this.createDivSize();
     console.log('asdfjk');
     var $bullseye = $('.bullseye');
@@ -44,10 +44,6 @@ var App = {
   '#05AFC4', '#4C4C4C' ],
 
   pickColor: function () {
-    // for (var i = 0; i < this.colors.length; i++) {
-    //   this.colors[i]
-    // }
-    // return Math.floor( (Math.random() * 10 ) ) - 1;
     return Math.floor(Math.random() * (7 - 0) + 0);
   },
 
@@ -55,20 +51,18 @@ var App = {
     while (this.pickColor() !== 6) {
       this.pickColor();
     }
-
-    // if (this.pickColor === 6) {
-    //   console.log('foiund num!');
-    //   return;
-    // }
   },
 
   render: function () {
     var wMax = $('.content-wrapper').innerWidth();
     var hMax = $('.content-wrapper').innerHeight();
-    console.log('wmax', wMax, 'hmax:', hMax);
+    // console.log('wmax', wMax, 'hmax:', hMax);
     var $bullseye = $('.bullseye');
-    console.log('posX', this.randomNum(1, wMax, hMax).posX);
-    console.log('poxY', this.randomNum(1, wMax, hMax).posY);
+    // console.log('posX', this.randomNum(1, wMax, hMax).posX);
+    // console.log('poxY', this.randomNum(1, wMax, hMax).posY);
+
+    // var posx = ( Math.random() * ($(document).width() - divsize) ).toFixed();
+    // var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
     var posX = (Math.random() * (wMax - 90)).toFixed();
     var posY = (Math.random() * (hMax - 90)).toFixed();
@@ -78,7 +72,6 @@ var App = {
 
 
     $bullseye.css({
-      // 'background-color': 'red',
       'background-color': this.colors[this.pickColor()],
       'position': 'absolute',
       // 'left': '50px',
@@ -90,13 +83,12 @@ var App = {
     });
     console.log('posX', posX);
     console.log('posY', posY);
+    console.log('-----------------');
   },
 
-  test: function () {
-    console.log('test', this.position().posx.toString() + 'px');
-    setInterval(function(){ App.render(); }, 500);
-  },
-
+  // testRender: function () {
+  //   setInterval(function(){ App.render(); }, 600);
+  // },
   handlers: (function () {
     var $startBtn = $('.start-btn');
     var $bullseye = $('.bullseye');
@@ -135,3 +127,13 @@ App.init();
 // });
 
 // $(document).ready(main);
+
+
+var testRender = setInterval(function(){
+  App.render();
+
+}, 600);
+
+var stopRender = function () {
+  clearInterval(this.testRender);
+};

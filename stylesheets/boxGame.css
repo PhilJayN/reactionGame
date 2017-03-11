@@ -5,6 +5,7 @@ Media queries will then target tablets and desktops*/
 html {
   -webkit-text-size-adjust: none;
   /*-ms-text-size-adjust: none;*/
+  width: 100%;
   height: 100%;
 }
 
@@ -18,14 +19,17 @@ html {
 body {
   background-color: #222222;
   color: silver;
+  width: 100%;
   height: 100%;
+   /*border: 1px solid blue;*/
+
 }
 
 .content-wrapper {
-   border: 1px solid pink;
-   /*width: 280px;
-   height: 500px;*/
-height: 100%;
+   /*border: 1px solid pink;*/
+   /*margin: 0 auto;*/
+   width: 100%;
+   height: 100%;
 }
 
 .bullseye {
