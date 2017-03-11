@@ -18,12 +18,21 @@ body {
 background-color: gray;
 }
 
+.content-wrapper {
+   border: 1px solid blue;
+   width: 280px;
+   height: 500px;
+
+}
+
 .bullseye {
   width: 90px;
   height: 90px;
   background-color: pink;
   display: none;
 }
+
+
 
 
 

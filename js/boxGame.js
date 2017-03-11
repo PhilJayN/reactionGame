@@ -1,6 +1,6 @@
+// var main = function() {
 
-
-
+$(function() {
 
 var App = {
 
@@ -37,32 +37,26 @@ var App = {
       };
   },
 
-  // position: function (min, max) {
-  //   var posx = (Math.random() * docWidth);
-  //   var posy = (Math.random() * docHeight - 90);
-  //   return {
-  //     posx: posx,
-  //     posy: posy
-  //   };
-  // },
   ogtime: 0,
   personalRecord: null,
 
   render: function () {
     var wMax = $('.content-wrapper').innerWidth();
     var hMax = $('.content-wrapper').innerHeight();
+    console.log('wmax', wMax, 'hmax:', hMax);
     var $bullseye = $('.bullseye');
-    console.log(this.randomNum(1, wMax, hMax).posX);
-    console.log(this.randomNum(1, wMax, hMax).posY);
+    console.log('posX', this.randomNum(1, wMax, hMax).posX);
+    console.log('poxY', this.randomNum(1, wMax, hMax).posY);
 
     this.ogtime = Date.now();
     $bullseye.show();
     $bullseye.css({
-      'background-color': 'blue',
+      'background-color': 'pink',
       'position': 'absolute',
-      // 'left': '-344px',
+      // 'left': '50px',
+      // 'top': '50' +'px',
       'left': this.randomNum(1, wMax, hMax).posX.toString() +'px',
-      'top': this.randomNum(1, wMax, hMax).posY.toString() +'px',
+      'top': this.randomNum(1, hMax, wMax).posY.toString() +'px',
     });
   },
 
@@ -104,3 +98,8 @@ var App = {
 };
 
 App.init();
+
+console.log('ready!');
+});
+
+// $(document).ready(main);
