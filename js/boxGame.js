@@ -5,9 +5,7 @@
 var App = {
 
   init: function () {
-
     this.createDivSize();
-    console.log('asdfjk');
     var $bullseye = $('.bullseye');
     return {
       $bullseye: $bullseye
@@ -64,6 +62,19 @@ var App = {
     console.log('-----------------');
   },
 
+  countdown: function () {
+    var $countdown = $('.countdown');
+    var counter = 3;
+    // debugger;
+    setInterval(function(){
+      if (counter > 0) {
+        $countdown.text(counter);
+        counter = counter - 1 ;
+        }
+      }, 1000);
+    App.render();
+  },
+
   // testRender: function () {
   //   setInterval(function(){ App.render(); }, 600);
   // },
@@ -75,7 +86,8 @@ var App = {
     var endTime;
 
     $startBtn.on('click', function () {
-      App.render();
+      App.countdown();
+      // App.render();
     });
     $bullseye.on('click', function () {
       // console.log('test sec', App.milliSec(0.5, 2.2));
