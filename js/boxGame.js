@@ -89,10 +89,13 @@ var App = {
     var $reactionTxt = $('.reaction-txt');
     var $recordTxt = $('.record-txt');
     var endTime;
+    var clicked = false;
 
     $startBtn.on('click', function () {
-      App.countdown();
-      // App.render();
+      if (clicked === false) {
+        App.countdown();
+      }
+      clicked = true;
     });
     $bullseye.on('click', function () {
       // console.log('test sec', App.milliSec(0.5, 2.2));
