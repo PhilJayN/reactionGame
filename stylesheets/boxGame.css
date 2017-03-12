@@ -7,6 +7,7 @@ html {
   /*-ms-text-size-adjust: none;*/
   width: 100%;
   height: 100%;
+   border: 1px solid red;
 }
 
 /*apply natural box layout, solves problem with some browser padding and width*/
@@ -19,17 +20,17 @@ html {
 body {
   background-color: #222222;
   color: silver;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
    /*border: 1px solid blue;*/
 
 }
 
 .content-wrapper {
-   /*border: 1px solid pink;*/
+   border: 1px solid green;
    /*margin: 0 auto;*/
    width: 100%;
-   height: 100%;
+   height: 85%;
 }
 
 .bullseye {

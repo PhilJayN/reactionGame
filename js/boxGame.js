@@ -64,7 +64,7 @@ var App = {
     // var posx = ( Math.random() * ($(document).width() - divsize) ).toFixed();
     // var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-    var posX = (Math.random() * (wMax - 90)).toFixed();
+    var posX = Math.floor((Math.random() * (wMax - 90)));
     var posY = (Math.random() * (hMax - 90)).toFixed();
 
     this.ogtime = Date.now();
@@ -137,3 +137,9 @@ var testRender = setInterval(function(){
 var stopRender = function () {
   clearInterval(this.testRender);
 };
+
+
+//challenges: and solutions:
+
+// random num not generating proper num, so box not staying inside container.
+// elemeent not inside html border, even though it is in html file
