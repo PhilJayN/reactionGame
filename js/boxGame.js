@@ -56,6 +56,11 @@ var App = {
   render: function () {
     var wMax = $('.content-wrapper').innerWidth();
     var hMax = $('.content-wrapper').innerHeight();
+
+    var wBox = $('.bullseye').innerWidth();
+    var hBox = $('.bullseye').innerHeight();
+
+    // console.log('wBox', wBox, 'hBox', hBox);
     // console.log('wmax', wMax, 'hmax:', hMax);
     var $bullseye = $('.bullseye');
     // console.log('posX', this.randomNum(1, wMax, hMax).posX);
@@ -64,8 +69,8 @@ var App = {
     // var posx = ( Math.random() * ($(document).width() - divsize) ).toFixed();
     // var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-    var posX = Math.floor((Math.random() * (wMax - 90)));
-    var posY = (Math.random() * (hMax - 90)).toFixed();
+    var posX = Math.floor((Math.random() * (wMax - wBox)));
+    var posY = (Math.random() * (hMax - hBox)).toFixed();
 
     this.ogtime = Date.now();
     $bullseye.show();

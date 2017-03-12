@@ -7,7 +7,6 @@ html {
   /*-ms-text-size-adjust: none;*/
   width: 100%;
   height: 100%;
-   border: 1px solid red;
 }
 
 /*apply natural box layout, solves problem with some browser padding and width*/
@@ -22,22 +21,18 @@ body {
   color: silver;
   width: 90%;
   height: 90%;
-   /*border: 1px solid blue;*/
-
 }
 
 .content-wrapper {
-   border: 1px solid green;
-   /*margin: 0 auto;*/
    width: 100%;
    height: 85%;
 }
 
 .bullseye {
   display: none;
-  width: 90px;
-  height: 90px;
-border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
 }
 
 .btn-style {
@@ -71,7 +66,10 @@ border-radius: 3px;
 /*TABLET*/
 @media only screen and (min-width: 641px) {
 
-
+  .bullseye {
+    width: 30px;
+    height: 30px;
+  }
 
 }
 
@@ -79,7 +77,12 @@ border-radius: 3px;
 
 /*or try breakpoint at 1141px */
 /*DESKTOP*/
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1024px) {
+
+  .bullseye {
+    width: 70px;
+    height: 70px;
+  }
 
 
 }
