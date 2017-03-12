@@ -18,13 +18,9 @@ var App = {
     var divSize = Math.random() * 100;
   },
 
-  randomNum: function (min, wMax, hMax) {
-      var posX = Math.random() * (wMax - min) + min;
-      var posY = Math.random() * (hMax - min) + min;
-      return {
-        posX: posX,
-        posY: posY
-      };
+  milliSec: function (min, max) {
+      var ms = (Math.random() * (max - min) + min) * 1000;
+      return ms;
   },
 
   ogtime: 0,
@@ -76,14 +72,13 @@ var App = {
     var $bullseye = $('.bullseye');
     var $reactionTxt = $('.reaction-txt');
     var $recordTxt = $('.record-txt');
-
     var endTime;
-
 
     $startBtn.on('click', function () {
       App.render();
     });
     $bullseye.on('click', function () {
+      // console.log('test sec', App.milliSec(0.5, 2.2));
       endTime = Date.now();
       var reaction = (endTime - App.ogtime) / 1000;
       $reactionTxt.text( 'Reaction Time: ' + reaction + 's');
@@ -96,7 +91,7 @@ var App = {
       //timeout should random num seconds range to render, to make it fun:
       setTimeout(function() {
         App.render();
-      }, 500);
+      }, App.milliSec(0.3, 2.5));
 
     });
   })()
@@ -105,6 +100,7 @@ var App = {
 App.init();
 
 // });
+
 
 // $(document).ready(main);
 
@@ -122,3 +118,14 @@ App.init();
 
 // random num not generating proper num, so box not staying inside container.
 // elemeent not inside html border, even though it is in html file
+
+
+
+// randomNum: function (min, wMax, hMax) {
+//     var posX = Math.random() * (wMax - min) + min;
+//     var posY = Math.random() * (hMax - min) + min;
+//     return {
+//       posX: posX,
+//       posY: posY
+//     };
+// },
