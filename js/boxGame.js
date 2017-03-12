@@ -71,8 +71,13 @@ var App = {
         $countdown.text(counter);
         counter = counter - 1 ;
         }
+      else {
+          $countdown.text('Go!');
+        }
       }, 1000);
-    App.render();
+      setTimeout(function(){
+        App.render();
+      }, 4000);
   },
 
   // testRender: function () {
