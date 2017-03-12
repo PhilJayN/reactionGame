@@ -84,7 +84,7 @@ var App = {
       $reactionTxt.text( 'Reaction Time: ' + reaction + 's');
       if (App.personalRecord === null || reaction < App.personalRecord) {
         App.personalRecord = reaction;
-        $recordTxt.text('Best Time: ' + App.personalRecord);
+        $recordTxt.text('Best Time: ' + App.personalRecord + 's');
       }
 
       $bullseye.hide();

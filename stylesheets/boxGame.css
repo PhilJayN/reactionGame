@@ -7,6 +7,8 @@ html {
   /*-ms-text-size-adjust: none;*/
   width: 100%;
   height: 100%;
+   border: 1px solid blue;
+
 }
 
 /*apply natural box layout, solves problem with some browser padding and width*/
@@ -23,12 +25,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+   border: 1px solid red;
+
 }
 
 .content-wrapper {
    width: 100%;
-   height: 70%;
-    /*border: 1px solid red;*/
+   /*height: 70%;*/
+   height: 75%;
+    border: 1px solid green;
 }
 
 .bullseye {
@@ -73,6 +78,8 @@ body {
 
 .rxn-game-result {
    text-align: center;
+   /*height: 30%;*/
+
 }
 
 .rxn-game-directions {
