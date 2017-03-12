@@ -19,13 +19,14 @@ html {
 body {
   background-color: #222222;
   color: silver;
-  width: 90%;
+  width: 100%;
   height: 90%;
 }
 
 .content-wrapper {
    width: 100%;
    height: 85%;
+    border: 1px solid blue;
 }
 
 .bullseye {
@@ -53,13 +54,10 @@ body {
   background-color: #EF4D54;
 }
 
-/*.start-btn3 {
-  background-color: #29B363;
-  border: none;
-  width: 4px;
-  height: 40px;
+.rxn-game-result {
+   border: 1px solid blue;
+   text-align: center;
 }
-*/
 
 
 /*rule kicks in when @ 641 and above*/
