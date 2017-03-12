@@ -17,17 +17,6 @@ var App = {
   createDivSize: function () {
     var divSize = Math.random() * 100;
   },
-  // docWidth: $(document).width(),
-  // docHeight: $(document).height(),
-  // posx: (Math.random() * 234),
-  // posy: (Math.random() * 234),
-  // var docWidth = $(document).width();
-  // var docHeight = $(document).height();
-  // var posx = (Math.random() * docWidth - 90);
-  // var posy = (Math.random() * docHeight - 90);
-  //
-  // function getRandomArbitrary(min, max) {
-  // },
 
   randomNum: function (min, wMax, hMax) {
       var posX = Math.random() * (wMax - min) + min;
@@ -56,33 +45,21 @@ var App = {
   render: function () {
     var wMax = $('.content-wrapper').innerWidth();
     var hMax = $('.content-wrapper').innerHeight();
-
     var wBox = $('.bullseye').innerWidth();
     var hBox = $('.bullseye').innerHeight();
 
     // console.log('wBox', wBox, 'hBox', hBox);
     // console.log('wmax', wMax, 'hmax:', hMax);
     var $bullseye = $('.bullseye');
-    // console.log('posX', this.randomNum(1, wMax, hMax).posX);
-    // console.log('poxY', this.randomNum(1, wMax, hMax).posY);
-
-    // var posx = ( Math.random() * ($(document).width() - divsize) ).toFixed();
-    // var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
     var posX = Math.floor((Math.random() * (wMax - wBox)));
     var posY = (Math.random() * (hMax - hBox)).toFixed();
 
     this.ogtime = Date.now();
     $bullseye.show();
-
-
     $bullseye.css({
       'background-color': this.colors[this.pickColor()],
       'position': 'absolute',
-      // 'left': '50px',
-      // 'top': '50' +'px',
-      // 'left': this.randomNum(1, wMax, hMax).posX.toString() +'px',
-      // 'top': this.randomNum(1, hMax, wMax).posY.toString() +'px',
       'left': posX +'px',
       'top': posY + 'px',
     });
@@ -109,7 +86,6 @@ var App = {
     $bullseye.on('click', function () {
       endTime = Date.now();
       var reaction = (endTime - App.ogtime) / 1000;
-      // console.log('reaction', reaction);
       $reactionTxt.text( 'Reaction Time: ' + reaction + 's');
       if (App.personalRecord === null || reaction < App.personalRecord) {
         App.personalRecord = reaction;
@@ -128,20 +104,18 @@ var App = {
 
 App.init();
 
-// console.log('ready!');
 // });
 
 // $(document).ready(main);
 
-
-var testRender = setInterval(function(){
-  App.render();
-
-}, 600);
-
-var stopRender = function () {
-  clearInterval(this.testRender);
-};
+// var testRender = setInterval(function(){
+//   App.render();
+//
+// }, 600);
+//
+// var stopRender = function () {
+//   clearInterval(this.testRender);
+// };
 
 
 //challenges: and solutions:
