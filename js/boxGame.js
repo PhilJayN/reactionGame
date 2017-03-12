@@ -30,7 +30,7 @@ var App = {
   ogtime: 0,
   personalRecord: null,
   colors: ['#D75D61', '#E5D347', '#FD9810', '#56AF5A', '#E8413D',
-  '#05AFC4', '#4C4C4C' ],
+  '#05AFC4', '#8F4997' ],
 
   pickColor: function () {
     return Math.floor(Math.random() * (7 - 0) + 0);
