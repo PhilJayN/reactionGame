@@ -55,7 +55,8 @@ html, body {
   border: none;
   border-radius: 2px;
   padding: .75em 1.75em;
-  margin-right: 1em;
+  /*margin-right: 1em;*/
+  margin-bottom: .85em;
   color: rgb(36, 35, 35);
 }
 
@@ -86,11 +87,17 @@ html, body {
   padding: 0;
 }
 
+.reaction-txt {
+  text-align: right;
+}
 
-/*.rxn-game-directions {
-  padding: 0 1em;
-  text-align: center;
-}*/
+.reaction-txt, .record-txt {
+  text-align: right;
+}
+
+.rxn-game-table {
+    margin: 0 auto;
+}
 
 
 /*rule kicks in when @ 641 and above*/
