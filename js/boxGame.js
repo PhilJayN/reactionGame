@@ -2,6 +2,7 @@
 
 // $(function() {
 
+
 var App = {
 
   init: function () {
@@ -120,6 +121,17 @@ var App = {
 App.init();
 
 // });
+
+
+
+function windowH() {
+   var wH = $(window).height();
+
+   $('.game-page-wrapper').css({'height': wH, 'background-color': 'pink',
+   'border': '2px solid blue'
+ });
+}
+windowH();
 
 
 // $(document).ready(main);

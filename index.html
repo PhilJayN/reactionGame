@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <title>Reaction Game</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="stylesheets/boxGame.css" rel="stylesheet" type="text/css">
+    <title>Reaction Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheets/boxGame.css" rel="stylesheet" type="text/css">
 
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
@@ -15,36 +15,41 @@
 </head>
 
 <body>
-  <div class="content-wrapper">
-    <div class="bullseye">
+    <div class="game-page-wrapper">
+
+        <div class="content-wrapper">
+            <div class="bullseye">
+            </div>
+        </div>
+        <!--end of content-wrapper-->
+
+
+        <div class="rxn-game-result">
+            <p class="countdown">
+                &nbsp
+            </p>
+
+            <div class="rxn-game-btn-wrap">
+                <button type="button" name="button" class="btn-style start-btn">Start</button>
+                <!-- <button type="button" name="button" class="btn-style stop-btn">Stop</button> -->
+            </div>
+            <p class="reaction-txt">
+                Reaction Time:
+            </p>
+
+            <p class="record-txt">
+                Best Time:
+            </p>
+
+            <p class="rxn-game-directions">
+                Test your reaction by hitting the target when it appears!
+            </p>
+        </div>
+
     </div>
-  </div> <!--end of content-wrapper-->
 
-
-<div class="rxn-game-result">
-  <p class="countdown">
-    &nbsp
-  </p>
-
-  <div class="rxn-game-btn-wrap">
-    <button type="button" name="button" class="btn-style start-btn">Start</button>
-    <!-- <button type="button" name="button" class="btn-style stop-btn">Stop</button> -->
-  </div>
-  <p class="reaction-txt">
-    Reaction Time:
-  </p>
-
-    <p class="record-txt">
-      Best Time:
-      </p>
-
-        <p class="rxn-game-directions">
-          Test your reaction by hitting the target when it appears!
-        </p>
-</div>
-
-  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script type="text/javascript" src="js/boxGame.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/boxGame.js"></script>
 </body>
 
 </html>
