@@ -127,9 +127,14 @@ App.init();
 function windowH() {
    var wH = $(window).height();
 
-   $('.game-page-wrapper').css({'height': wH, 'background-color': 'pink',
+   $('.content-wrapper').css({'height': wH * (0.7), 'background-color': 'pink',
    'border': '2px solid blue'
  });
+
+ $('.rxn-game-result').css({'height': wH * (0.25), 'background-color': 'tomato',
+ 'border': '2px solid blue'
+});
+
 }
 windowH();
 
