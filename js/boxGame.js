@@ -124,17 +124,21 @@ App.init();
 
 
 
-function windowH() {
+function winHeight() {
+  console.log('height adjusting');
    var wH = $(window).height();
 
    $('.content-wrapper').css({'height': wH * (0.7)
  });
 
- $('.rxn-game-result').css({'height': wH * (0.25)
+ $('.rxn-game-result').css({'height': wH * (0.29)
 });
 
 }
-windowH();
+winHeight();
+
+window.addEventListener("resize", winHeight);
+
 
 
 // function windowH() {
