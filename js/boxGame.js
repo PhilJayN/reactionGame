@@ -123,7 +123,6 @@ App.init();
 // });
 
 
-
 function winHeight() {
   console.log('height adjusting');
    var wH = $(window).height();
@@ -140,20 +139,6 @@ winHeight();
 window.addEventListener("resize", winHeight);
 
 
-
-// function windowH() {
-//    var wH = $(window).height();
-//
-//    $('.content-wrapper').css({'height': wH * (0.7), 'background-color': 'pink',
-//    'border': '2px solid blue'
-//  });
-//
-//  $('.rxn-game-result').css({'height': wH * (0.25), 'background-color': 'tomato',
-//  'border': '2px solid blue'
-// });
-//
-// }
-// windowH();
 
 
 // $(document).ready(main);
@@ -172,14 +157,3 @@ window.addEventListener("resize", winHeight);
 
 // random num not generating proper num, so box not staying inside container.
 // elemeent not inside html border, even though it is in html file
-
-
-
-// randomNum: function (min, wMax, hMax) {
-//     var posX = Math.random() * (wMax - min) + min;
-//     var posY = Math.random() * (hMax - min) + min;
-//     return {
-//       posX: posX,
-//       posY: posY
-//     };
-// },
