@@ -38,8 +38,8 @@ var App = {
   },
 
   render: function () {
-    var wMax = $('.content-wrapper').innerWidth();
-    var hMax = $('.content-wrapper').innerHeight();
+    var wMax = $('.rxn-game-wrapper').innerWidth();
+    var hMax = $('.rxn-game-wrapper').innerHeight();
     var wBox = $('.bullseye').innerWidth();
     var hBox = $('.bullseye').innerHeight();
 
@@ -127,7 +127,7 @@ function winHeight() {
   console.log('height adjusting');
    var wH = $(window).height();
 
-   $('.content-wrapper').css({'height': wH * (0.7)
+   $('.rxn-game-wrapper').css({'height': wH * (0.7)
  });
 
  $('.rxn-game-result').css({'height': wH * (0.29)
