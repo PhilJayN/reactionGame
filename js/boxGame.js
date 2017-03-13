@@ -127,16 +127,29 @@ App.init();
 function windowH() {
    var wH = $(window).height();
 
-   $('.content-wrapper').css({'height': wH * (0.7), 'background-color': 'pink',
-   'border': '2px solid blue'
+   $('.content-wrapper').css({'height': wH * (0.7)
  });
 
- $('.rxn-game-result').css({'height': wH * (0.25), 'background-color': 'tomato',
- 'border': '2px solid blue'
+ $('.rxn-game-result').css({'height': wH * (0.25)
 });
 
 }
 windowH();
+
+
+// function windowH() {
+//    var wH = $(window).height();
+//
+//    $('.content-wrapper').css({'height': wH * (0.7), 'background-color': 'pink',
+//    'border': '2px solid blue'
+//  });
+//
+//  $('.rxn-game-result').css({'height': wH * (0.25), 'background-color': 'tomato',
+//  'border': '2px solid blue'
+// });
+//
+// }
+// windowH();
 
 
 // $(document).ready(main);
