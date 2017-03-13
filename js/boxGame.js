@@ -1,27 +1,17 @@
+var main = function() {
 
-function winHeight() {
-  console.log('height adjusting');
-   var wH = $(window).height();
-
-   $('.rxn-game-wrapper').css({'height': wH * (0.7)
- });
-
- $('.rxn-game-result').css({'height': wH * (0.29)
-});
-
-}
-winHeight();
-
-window.addEventListener("resize", winHeight);
-
-
-// var main = function() {
 
 var App = {
 
-  init: function () {
-    var $bullseye = $('.bullseye');
-  },
+  winHeight: function () {
+    console.log('height adjusting now');
+     var wH = $(window).height();
+     var $rxnGameWrapper = $('.rxn-game-wrapper');
+     var $rxnGameResult = $('.rxn-game-result');
+
+     $rxnGameWrapper.css({'height': wH * (0.7)});
+     $rxnGameResult.css({'height': wH * (0.29)});
+},
 
   milliSec: function (min, max) {
       var ms = (Math.random() * (max - min) + min) * 1000;
@@ -39,12 +29,14 @@ var App = {
 
   render: function () {
     var $bullseye = $('.bullseye');
-    var wMax = $('.rxn-game-wrapper').innerWidth();
-    var hMax = $('.rxn-game-wrapper').innerHeight();
-    var wBox = $('.bullseye').innerWidth();
-    var hBox = $('.bullseye').innerHeight();
+    var $rxnGameWrapper = $('.rxn-game-wrapper');
 
-    var posX = Math.floor((Math.random() * (wMax - wBox)));
+    var wMax = $rxnGameWrapper.innerWidth();
+    var hMax = $rxnGameWrapper.innerHeight();
+    var wBox = $bullseye.innerWidth();
+    var hBox = $bullseye.innerHeight();
+
+    var posX = (Math.random() * (wMax - wBox)).toFixed();
     var posY = (Math.random() * (hMax - hBox)).toFixed();
 
     this.ogtime = Date.now();
@@ -109,24 +101,7 @@ var App = {
   })()
 };
 
-App.init();
+window.addEventListener("resize", App.winHeight);
 
-// });
-
-
-
-// $(document).ready(main);
-
-// var testRender = setInterval(function(){
-//   App.render();
-//
-// }, 600);
-//
-// var stopRender = function () {
-//   clearInterval(this.testRender);
-// };
-
-
-//challenges: and solutions:
-// random num not generating proper num, so box not staying inside container.
-// elemeent not inside html border, even though it is in html file
+}; //end of main function
+$(document).ready(main);
