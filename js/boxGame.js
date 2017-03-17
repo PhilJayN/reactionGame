@@ -6,10 +6,10 @@ var App = {
   winHeight: function () {
     console.log('height adjusting now');
      var wH = $(window).height();
-     var $rxnGameWrapper = $('.rxn-game-wrapper');
+     var $gameBox = $('.game-box');
      var $rxnGameResult = $('.rxn-game-result');
 
-     $rxnGameWrapper.css({'height': wH * (0.7)});
+     $gameBox.css({'height': wH * (0.7)});
      $rxnGameResult.css({'height': wH * (0.29)});
 },
 
@@ -29,15 +29,16 @@ var App = {
 
   render: function () {
     var $bullseye = $('.bullseye');
-    var $rxnGameWrapper = $('.rxn-game-wrapper');
+    var $gameBox = $('.game-box');
 
-    var wMax = $rxnGameWrapper.innerWidth();
-    var hMax = $rxnGameWrapper.innerHeight();
-    var wBox = $bullseye.innerWidth();
-    var hBox = $bullseye.innerHeight();
+    var gameBoxW = $gameBox.innerWidth();
+    var gameBoxH = $gameBox.innerHeight();
+    var bullseyeW = $bullseye.innerWidth();
+    var bullseyeH = $bullseye.innerHeight();
 
-    var posX = (Math.random() * (wMax - wBox)).toFixed();
-    var posY = (Math.random() * (hMax - hBox)).toFixed();
+    var posX = (Math.random() * (gameBoxW - bullseyeW)).toFixed();
+    var posY = (Math.random() * (gameBoxH - bullseyeH)).toFixed();
+
 
     this.ogtime = Date.now();
     $bullseye.show();
@@ -47,9 +48,10 @@ var App = {
       'left': posX +'px',
       'top': posY + 'px',
     });
-    // console.log('posX', posX);
-    // console.log('posY', posY);
-    // console.log('-----------------');
+    console.log('posX', posX);
+    console.log('posY', posY);
+    console.log('-----------------');
+    console.log('gameBoxW', gameBoxW);
   },
 
   countdown: function () {
